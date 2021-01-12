@@ -31,7 +31,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className='calendar'>
       <CalendarPicker />
+      </div>
+      
       <h2>LIST OF THINGS TO DO</h2>
       <form> 
       <input type='text' onChange={handleInput} value={input}/>
