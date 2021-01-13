@@ -16,6 +16,7 @@ function CalendarPicker() {
         value={date}
         
       />
+      {console.log(date)}
         </div>
     )
 }
