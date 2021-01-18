@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react'; 
-import { v4 as uuid } from 'uuid';
+//import { v4 as uuid } from 'uuid';
+import Banner from './components/Banner/Banner'
 import CalendarPicker from './components/Calendar/CalendarPicker'
 import './App.css';
-import List from './components/List/List'
+import List from './components/List/List';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectDate } from './features/dateSlice';
+import { addItem, changeDate } from './features/dateSlice';
+import FilteredList from './components/FilteredList/FilteredList';
 
 function App() {
   const [input, setInput] = useState("");
-  const [submit, setSubmit] = useState([]);
-  
+  //const [submit, setSubmit] = useState([]);
+  const dispatch = useDispatch();
+  const date = useSelector(selectDate);
 
   useEffect(() => {
     console.log('input: ' , input)
-    console.log('submit', submit)
+    //console.log('submit', submit)
     
   })
 
@@ -21,26 +27,33 @@ function App() {
   }
 
   const handleSubmit = (e) => {
+    dispatch(addItem(input))
+    console.log('input from input:',input)
     e.preventDefault()
-    const newInput =  {id: uuid, title: input};
-    setSubmit([...submit, newInput])
-    setInput("");
+    //const newInput =  {id: uuid(), date: date, title: input};
+    //setSubmit([...submit, newInput])
+    //setInput("");
   }
-
-  
-
   return (
-    <div className="App">
-      <div className='calendar'>
-      <CalendarPicker />
-      </div>
+    <div className="app">
+      <div className="app__content">
+      <Banner />
+        <div className='app__calendar'>
+        <CalendarPicker />
+        <form> 
       
-      <h2>LIST OF THINGS TO DO</h2>
-      <form> 
       <input type='text' onChange={handleInput} value={input}/>
       <button type ='submit' onClick={handleSubmit}>ADD</button>
       </form>
-      <List submit={submit} />
+        </div>
+      <div className='app__todos'>
+        <h2>List todos</h2>
+      <List />
+      <h2>Things to do on: </h2>
+      <FilteredList />
+      </div>
+      
+      </div>
     </div>
   );
 }
