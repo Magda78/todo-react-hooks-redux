@@ -39,12 +39,17 @@ function App() {
       <div className="app__content">
       <Banner />
         <div className='app__calendar'>
-        <CalendarPicker />
-        <form> 
+          <div className='app__calendar__dataPicker'>
+            <CalendarPicker />
+          </div>
+          <div className='app__clendar__form'>
+          
       
-      <input type='text' onChange={handleInput} value={input}/>
+      <input type='text' onChange={handleInput} value={input} placeholder='Add todo.....'/>
       <button type ='submit' onClick={handleSubmit}>ADD</button>
-      </form>
+      
+          </div>
+        
         </div>
       <div className='app__todos'>
         <h2>List todos</h2>

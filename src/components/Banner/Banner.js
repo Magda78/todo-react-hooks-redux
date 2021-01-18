@@ -9,7 +9,7 @@ function Banner() {
                 <img src={bannerImg} />
             </div>
             <div className='banner__right'>
-                <h2>My todo's</h2>
+                <h2>My todo list</h2>
             </div>
         </div>
     )

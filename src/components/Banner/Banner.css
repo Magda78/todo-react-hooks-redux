@@ -3,6 +3,7 @@
     height: 60%;
     display: flex;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .banner__left {
@@ -20,6 +21,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
+    text-align: center;
 }
 
 .banner__right > h2 {
