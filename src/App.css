@@ -1,9 +1,11 @@
 .app {
   width: 90%;
-  height: 80vh;
   margin-left: 5%;
   background-color: #FBFAFF;
-  font-family: fantasy
+  font-family: fantasy;
+  margin-top: 20px;
+  overflow: auto;
+  margin-bottom: 20px;
 }
 
 .app__content {
@@ -45,6 +47,32 @@
 .app__clendar__form > button:hover {
   background-color: #FF6B5F;
   color: #FFFFFF;
+}
+
+.app__todos {
+  display:flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.app__todos__list {
+  flex: 0.48;
+}
+
+.app__tosos__byDay {
+  flex: 0.48;
+}
+
+.app__todos__list  > fieldset {
+  height: 400px;
+  overflow: auto;
+  border: 2px solid #D35842;
+}
+
+.app__tosos__byDay > fieldset {
+  height: 400px;
+  overflow: auto;
+  border: 2px solid #D35842;
 }
 
 

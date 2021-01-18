@@ -52,10 +52,22 @@ function App() {
         
         </div>
       <div className='app__todos'>
-        <h2>List todos</h2>
-      <List />
-      <h2>Things to do on: </h2>
-      <FilteredList />
+        <div className='app__todos__list'>
+          <fieldset>
+            <legend>
+            List todos
+            </legend>
+            <List />
+          </fieldset>
+        </div>
+        <div className='app__tosos__byDay'>
+        <fieldset>
+            <legend>
+            List todos by date
+            </legend>
+            <FilteredList />
+          </fieldset>
+        </div>
       </div>
       
       </div>
