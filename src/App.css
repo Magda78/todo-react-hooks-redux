@@ -1,11 +1,12 @@
 .app {
   width: 90%;
   margin-left: 5%;
-  background-color: #FBFAFF;
-  font-family: fantasy;
+  background-color: rgb(113,157,226,0.24);
+  font-family: roboto;
   margin-top: 20px;
   overflow: auto;
   margin-bottom: 20px;
+  border-radius: 20px;
 }
 
 .app__content {
@@ -15,37 +16,43 @@
 .app__calendar  {
   display: flex;
   flex-direction: column;
-  padding: 30px;
-  background-color: #719DE2;
+  padding: 20px;
+  background-color: rgb(113,157,226,0.24);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .app__calendar__dataPicker {
   text-align: right;
 }
 
-.app__clendar__form {
+.app__calendar__form {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.app__clendar__form > input {
+.app__calendar__form > input {
   width: 78%;
-  padding: 5px;
+  padding: 10px;
   border: none;
   outline: none;
+  border-radius: 20px;
 }
 
-.app__clendar__form > button {
+.app__calendar__form > button {
   width: 20%;
   padding: 5px;
   border: none;
-  color: #D35842;
+  outline:none;
+  border-radius: 20px;
+  background-color: #FF6B5F;
+  color: #FFFFFF;
   font-weight: bold;
 }
 
-.app__clendar__form > button:hover {
-  background-color: #FF6B5F;
+.app__calendar__form > button:hover {
+  background-color: #719DE2;
   color: #FFFFFF;
 }
 
@@ -57,22 +64,23 @@
 
 .app__todos__list {
   flex: 0.48;
+  height: 400px;
+  overflow: auto;
 }
 
 .app__tosos__byDay {
   flex: 0.48;
-}
-
-.app__todos__list  > fieldset {
   height: 400px;
   overflow: auto;
-  border: 2px solid #D35842;
 }
 
-.app__tosos__byDay > fieldset {
+.app__todos__list > p {
+  font-size: smaller;
+}
+
+.app__tosos__byDay {
   height: 400px;
   overflow: auto;
-  border: 2px solid #D35842;
 }
 
 

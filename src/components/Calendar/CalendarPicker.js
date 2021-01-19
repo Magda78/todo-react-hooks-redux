@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-//import Calendar from 'react-calendar';
-//import 'react-calendar/dist/Calendar.css';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -35,8 +34,12 @@ function CalendarPicker() {
 
     return (
         <div>
-            <DatePicker selected={date} onChange={date => onChange(date)} onSelect={date => handleDateSelect(date)} dateFormat="yyyy/MM/dd"/>
-        
+            {/*<DatePicker selected={date} onChange={date => onChange(date)} onSelect={date => handleDateSelect(date)} dateFormat="yyyy/MM/dd"/>*/}
+            <Calendar
+        onChange={onChange}
+        onClickDay={handleDateSelect}
+        value={date}
+      />
       {console.log(date)}
       {console.log(list)}
       <div>

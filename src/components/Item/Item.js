@@ -1,16 +1,18 @@
 import React from 'react';
-import { selectDate, selectList } from '../../features/dateSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import './Item.css';
+import DeleteIcon from '@material-ui/icons/Delete';
 
-function Item({id, title}) {
-    const date = useSelector(selectDate);
-    const list = useSelector(selectList);
-    return (
-        <div>
-            <h2>{title}</h2>
-
-        </div>
-    )
+function Item({ id, title }) {
+	return (
+		<div className="item">
+			<div className="item__title">
+				<h2>{title}</h2>
+			</div>
+			<div className="item_icons">
+				<DeleteIcon />
+			</div>
+		</div>
+	);
 }
 
-export default Item
+export default Item;

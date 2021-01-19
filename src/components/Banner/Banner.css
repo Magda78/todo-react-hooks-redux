@@ -2,8 +2,9 @@
     width: 100%;
     height: 60%;
     display: flex;
-    margin-top: 20px;
+    border-radius: 20px;
     margin-bottom: 20px;
+    background-color: #719DE2;
 }
 
 .banner__left {
@@ -27,7 +28,7 @@
 
 .banner__right > h2 {
     font-size: 64px;
-    color: #719DE2;
+    color: #FFFFFF;
     letter-spacing: 4px;
     font-family: fantasy;
 }

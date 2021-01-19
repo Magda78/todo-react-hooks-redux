@@ -1,0 +1,19 @@
+.item {
+    padding: 8px;
+    background-color: #719DE2;
+    border-radius: 20px;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item__title {
+    font-size: 10px;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+.item__icons > MuiSvgIcon-root {
+    color: #719DE2;
+}

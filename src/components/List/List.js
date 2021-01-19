@@ -1,23 +1,12 @@
 import React from 'react';
+import './List.css';
 import Item from './../Item/Item';
-import { selectDate, selectList, selectDateList } from '../../features/dateSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { selectList } from '../../features/dateSlice';
+import { useSelector } from 'react-redux';
 
-function List({submit}) {
-    const date = useSelector(selectDate);
-    const list = useSelector(selectList);
-    return (
-        <div>
-            {
-                list.map(item => (
-                    <Item 
-                    title={item.title}
-                    />
-                ))
-            }
-            
-        </div>
-    )
+function List() {
+	const list = useSelector(selectList);
+	return <div className='list'>{list.map((item) => <Item title={item.title} />)}</div>;
 }
 
-export default List
+export default List;
