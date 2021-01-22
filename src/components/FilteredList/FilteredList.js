@@ -1,4 +1,5 @@
 import React from 'react';
+import './FilteredList.css';
 import FilteredItem from './../FilteredItem/FilteredItem';
 import { selectDate, selectList, selectFiltered } from '../../features/dateSlice';
 import { changeDate, filteredList} from '../../features/dateSlice';
@@ -9,7 +10,7 @@ function FilteredList({submit}) {
     const list = useSelector(selectList);
     const filtered = useSelector(selectFiltered);
     return (
-        <div>
+        <div className='filteredList'>
             {
                 filtered.map(item => (
                     <FilteredItem 

@@ -44,11 +44,11 @@ function App() {
 				</div>
 				<div className="app__todos">
 					<div className="app__todos__list">
-						<p>List todos</p>
+						<p>All todos</p>
 						<List />
 					</div>
 					<div className="app__tosos__byDay">
-						<p>List todos by date</p>
+						<p>Todos by date</p>
 						<FilteredList />
 					</div>
 				</div>

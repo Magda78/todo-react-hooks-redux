@@ -1,4 +1,4 @@
-.item {
+.filteredItem {
     padding: 8px;
     display: flex;
     margin-bottom: 10px;
@@ -7,16 +7,16 @@
     border-bottom: 1px solid #B2DEFF;
 }
 
-.item__title {
+.filteredItem__title {
     font-size: 10px;
     font-weight: normal;
     color: #dff2ff;
 }
 
-.item_icons > .MuiSvgIcon-root {
+.filteredItem_icons > .MuiSvgIcon-root {
     color: #FF6B5F
 }
 
-.item_icons > .MuiSvgIcon-root:hover {
+.filteredItem_icons > .MuiSvgIcon-root:hover {
     color: #719DE2;
 }

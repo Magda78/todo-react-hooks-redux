@@ -6,7 +6,8 @@ export const dateSlice = createSlice({
   initialState: {
     date: new Date(),
     list: [],
-    filtered: []
+    filtered: [],
+    afterRemove: []
   },
   reducers: {
     changeDate: (state, action) => {
@@ -14,22 +15,27 @@ export const dateSlice = createSlice({
       
     },
     addItem: (state, action) => {
-        const newItem =  {id: uuid(), date: state.date, title: action.payload};
+        const newItem =  {id: uuid(), date: state.date, title: action.payload.toUpperCase()};
         state.list.push(newItem);
     },
     filteredList: (state, action) =>  {
-            state.filtered = state.list.filter(item => (
+            const filtered = state.list.filter(item => (
                 item.date.toString() === action.payload.toString() 
-        )
+            )
             )
             console.log('filtered from reducer:' , state.filtered)
             console.log('date list from reducer:' ,state.dateList)
             },
+    removeItem: (state, action) => {
+        state.list = state.list.filter(item => (
+            item.id !==action.payload
+        ))
         
+    },
   }
 })
 
-export const { changeDate, addItem, filteredList } = dateSlice.actions;
+export const { changeDate, addItem, filteredList, removeItem} = dateSlice.actions;
 
 export const selectDate = state => state.date.date;
 export const selectList = state => state.date.list;
