@@ -1,6 +1,10 @@
 .list {
     height: 400px;
-    background-color: #4e7e9d;
+    /*background-color: #4e7e9d;*/
     border-radius: 20px;
     padding: 20px;
+    /*background-image: url('../assets/pexels-anni-roenkae-3110502.jpg');*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

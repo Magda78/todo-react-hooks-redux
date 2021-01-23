@@ -4,17 +4,29 @@
     margin-bottom: 10px;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #B2DEFF;
+    background: rgba( 178, 222, 255, 0.30 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    /*backdrop-filter: blur( 6.0px );*/
+    /*-webkit-backdrop-filter: blur( 5.5px );*/
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 20px;
 }
 
-.item__title {
-    font-size: 10px;
-    font-weight: normal;
-    color: #dff2ff;
+.item__title > h2{
+    font-weight: bold;
+    color: darkblue;
+}
+
+.item__titleDone {
+    text-decoration: line-through;
+    color: #00c301;
 }
 
 .item_icons > .MuiSvgIcon-root {
-    color: #FF6B5F
+    color: darkblue;
 }
 
 .item_icons > .MuiSvgIcon-root:hover {

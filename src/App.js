@@ -7,9 +7,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectDate } from './features/dateSlice';
 import { addItem, changeDate } from './features/dateSlice';
 import FilteredList from './components/FilteredList/FilteredList';
+import Motto from './components/Motto/Motto';
 
 function App() {
-	const [ input, setInput ] = useState('');
+  const [ input, setInput ] = useState('');
+  const quote = Motto();
 	//const [submit, setSubmit] = useState([]);
 	const dispatch = useDispatch();
 	const date = useSelector(selectDate);
@@ -34,6 +36,10 @@ function App() {
 		<div className="app">
 			<div className="app__content">
 				<Banner />
+        <div className='app__motto'>
+        <h2>{quote}</h2>
+          </div>
+        
 				<div className="app__calendar">
 					<div className="app__calendar__form">
 						<input type="text" onChange={handleInput} value={input} placeholder="Add todo....." />

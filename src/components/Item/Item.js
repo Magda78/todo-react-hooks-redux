@@ -3,6 +3,8 @@ import './Item.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { useDispatch } from 'react-redux';
 //import { selectDate, selectList } from '../../features/dateSlice';
 import { removeItem } from '../../features/dateSlice';
@@ -21,14 +23,11 @@ function Item({ id, title }) {
 }
 	return (
 		<div className="item">
-			<div className="item__title">
+			<div className={done === false ? 'item__title' : "item__titleDone"}>
 				<h2>{title}</h2>
 			</div>
 			<div className="item_icons">
-				<CheckCircleOutlineIcon onClick={toggleHandler}/>
-                {
-                    done === true  ? console.log('t') : console.log('f')
-                }
+            {done === false ? <CheckBoxOutlineBlankIcon onClick={toggleHandler}/> : <CheckBoxIcon onClick={toggleHandler}/>}
 				<DeleteIcon onClick={() => removeHandler(id)}/>
 			</div>
 		</div>
