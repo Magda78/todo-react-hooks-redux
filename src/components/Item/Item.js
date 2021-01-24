@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import React, { useState } from 'react';
 import './Item.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { removeItem } from '../../features/dateSlice';
 import { Spring } from 'react-spring/renderprops';
 import FlipMove from 'react-flip-move';
+import { useSpring, animated } from 'react-spring';
 
 function Item({ id, title }) {
 	const dispatch = useDispatch();
@@ -23,10 +24,17 @@ function Item({ id, title }) {
 	const removeHandler = (id) => {
 		dispatch(removeItem(id));
 		console.log(id);
-	};
+    };
+    
+   
+    const item = useSpring({
+        from: { marginTop: -100 },
+        to: { marginTop: 0 }
+      });
 	return (
         
-            <div className="item">
+        
+            <animated.div className='item' style={item}>
             
             <div className={done === false ? 'item__title' : 'item__titleDone'}>
               <h2>{title}</h2>
@@ -39,9 +47,9 @@ function Item({ id, title }) {
               )}
               <DeleteIcon onClick={() => removeHandler(id)} />
           </div>
-        
           
-      </div>
+          
+      </animated.div>
 		
 	);
 }
