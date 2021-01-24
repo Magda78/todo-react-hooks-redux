@@ -8,29 +8,40 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { useDispatch } from 'react-redux';
 //import { selectDate, selectList } from '../../features/dateSlice';
 import { removeItem } from '../../features/dateSlice';
+import {Spring} from 'react-spring/renderprops'
 
 function Item({ id, title }) {
-    const dispatch = useDispatch();
-    const [done, setDone] = useState(false);
+	const dispatch = useDispatch();
+	const [ done, setDone ] = useState(false);
 
-    const toggleHandler = () => {
-        setDone(!done)
-    }
+	const toggleHandler = () => {
+		setDone(!done);
+	};
 
-    const removeHandler = (id) => {
-        dispatch(removeItem(id))
-        console.log(id)
-}
+	const removeHandler = (id) => {
+		dispatch(removeItem(id));
+		console.log(id);
+	};
 	return (
-		<div className="item">
-			<div className={done === false ? 'item__title' : "item__titleDone"}>
-				<h2>{title}</h2>
-			</div>
-			<div className="item_icons">
-            {done === false ? <CheckBoxOutlineBlankIcon onClick={toggleHandler}/> : <CheckBoxIcon onClick={toggleHandler}/>}
-				<DeleteIcon onClick={() => removeHandler(id)}/>
-			</div>
-		</div>
+		<Spring from={{ marginTop: -500 }} to={{ marginTop: 0 }}>
+			{(props) => (
+				<div style={props}>
+					<div className="item">
+						<div className={done === false ? 'item__title' : 'item__titleDone'}>
+							<h2>{title}</h2>
+						</div>
+						<div className="item_icons">
+							{done === false ? (
+								<CheckBoxOutlineBlankIcon onClick={toggleHandler} />
+							) : (
+								<CheckBoxIcon onClick={toggleHandler} />
+							)}
+							<DeleteIcon onClick={() => removeHandler(id)} />
+						</div>
+					</div>
+				</div>
+			)}
+		</Spring>
 	);
 }
 
