@@ -1,11 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
 
+
+const initialList = localStorage.getItem('list')
+  ? JSON.parse(localStorage.getItem('list'))
+  : []
+
+
 export const dateSlice = createSlice({
   name: "date",
   initialState: {
     date: new Date(),
     list: [],
+    list: initialList,
     filtered: [],
     afterRemove: []
   },
@@ -17,6 +24,7 @@ export const dateSlice = createSlice({
     addItem: (state, action) => {
         const newItem =  {id: uuid(), date: state.date, title: action.payload.toUpperCase()};
         state.list.push(newItem);
+        localStorage.setItem('list', JSON.stringify(state.list))
     },
     filteredList: (state, action) =>  {
             const filtered = state.list.filter(item => (
@@ -30,7 +38,7 @@ export const dateSlice = createSlice({
         state.list = state.list.filter(item => (
             item.id !==action.payload
         ))
-        
+        localStorage.setItem('list', JSON.stringify(state.list));
     },
   }
 })

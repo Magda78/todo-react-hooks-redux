@@ -4,7 +4,7 @@ import CalendarPicker from './components/Calendar/CalendarPicker';
 import './App.css';
 import List from './components/List/List';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectDate } from './features/dateSlice';
+import { selectDate, selectList } from './features/dateSlice';
 import { addItem, changeDate } from './features/dateSlice';
 import FilteredList from './components/FilteredList/FilteredList';
 import Motto from './components/Motto/Motto';
@@ -14,12 +14,17 @@ function App() {
   const quote = Motto();
 	//const [submit, setSubmit] = useState([]);
 	const dispatch = useDispatch();
-	const date = useSelector(selectDate);
+  const date = useSelector(selectDate);
+  const list = useSelector(selectList);
+  
+  
+ 
 
-	useEffect(() => {
-		console.log('input: ', input);
-		//console.log('submit', submit)
-	});
+  /*useEffect(() => {
+    setStorage(localStorage.setItem('list', JSON.stringify(list)))
+  },[list])*/
+
+ 
 
 	const handleInput = (e) => {
 		setInput(e.target.value);
@@ -51,7 +56,7 @@ function App() {
 				<div className="app__todos">
 					<div className="app__todos__list">
 						<p>All todos</p>
-						<List />
+            	<List /> 
 					</div>
 					<div className="app__tosos__byDay">
 						<p>Todos by date</p>
