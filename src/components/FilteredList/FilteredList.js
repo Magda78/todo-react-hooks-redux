@@ -1,28 +1,17 @@
 import React from 'react';
 import './FilteredList.css';
-import FilteredItem from './../FilteredItem/FilteredItem';
-import { selectDate, selectList, selectFiltered } from '../../features/dateSlice';
-import { changeDate, filteredList} from '../../features/dateSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import FilteredItem from './'
+import { selectList } from '../../features/dateSlice';
+import { useSelector } from 'react-redux';
 
-function FilteredList({submit}) {
-    const date = useSelector(selectDate);
-    const list = useSelector(selectList);
-    const filtered = useSelector(selectFiltered);
+function FilteredList() {
     return (
-        <div className='filteredList'>
-            {
-                filtered.map(item => (
-                    <FilteredItem 
-                    title={item.title}
-                    
-                    />
-                ))
-                
-            }
-            
+        <div>
+            const list = useSelector(selectList);
+    return <div className='list'>{list.map((item) => <Item title={item.title} id={item.id} item={item}/>)}</div>;
         </div>
     )
 }
 
 export default FilteredList
+

@@ -6,9 +6,8 @@ import { useSelector } from 'react-redux';
 
 function List() {
     const list = useSelector(selectList);
-    return <div className='list'>{list.map((item) => <Item title={item.title} id={item.id}/>)}</div>;
-
-
+    return <div className='list'>{list.map((item) => <Item title={item.title} id={item.id} item={item}/>)}</div>;
+    
 }
 
 export default List;

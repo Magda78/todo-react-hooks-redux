@@ -16,4 +16,4 @@ function Motto() {
     return quote
 }
 
-export default Motto
+export default Motto;

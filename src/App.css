@@ -1,16 +1,11 @@
 .app {
   width: 90%;
   margin-left: 5%;
-  /*background-color: rgb(113,157,226,0.24);*/
-  /*background-color: #4e7e9d;*/
-  background-image: url('./components/assets/background-221391_1920.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-color: aliceblue;
   font-family: monospace;
   margin-top: 20px;
   overflow: auto;
-  margin-bottom: 20px;
+  padding: 15px;
   border-radius: 20px;
 }
 
@@ -18,30 +13,10 @@
   margin: 5px;
 }
 
-.app__motto {
-  padding: 20px;
-  /*background-color: #4e7e9d;*/
-  background: rgba( 178, 222, 255, 0.30 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  /*backdrop-filter: blur( 6.0px );*/
-  /*-webkit-backdrop-filter: blur( 5.5px );*/
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  margin-bottom: 20px;
-}
-
-.app__motto > h2 {
-  text-align: center;
-  color: darkblue;
-}
-
 .app__calendar  {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  /*background-color: #4e7e9d;*/
+  padding: 15px;
   background: rgba( 178, 222, 255, 0.10 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 1px );
@@ -57,12 +32,17 @@
 }
 
 .app__calendar__form {
+  margin-top: 20px;
+}
+
+.app__calendar__formTag {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.app__calendar__form > input {
+.app__calendar__formTag> input {
   width: 78%;
   padding: 10px;
   border: none;
@@ -70,57 +50,38 @@
   border-radius: 20px;
 }
 
-.app__calendar__form > button {
+.app__calendar__formTag > button {
   width: 20%;
   padding: 5px;
   border: none;
   outline:none;
   border-radius: 20px;
-  background-color: #FF6B5F;
-  color: #FFFFFF;
+  background-color: #359CB4;
+  color: floralwhite;
   font-weight: bold;
 }
 
-.app__calendar__form > button:hover {
-  background-color: #719DE2;
-  color: #FFFFFF;
+.app__calendar__formTag > button:hover {
+  background-color: #FA6526;
+  color: floralwhite;
 }
 
 .app__todos {
   display:flex;
   margin-top: 20px;
+  margin-bottom: 20px;
   justify-content: space-between;
 }
 
 .app__todos__list {
-  flex: 0.48;
+  flex: 1;
   height: 400px;
-  overflow: auto;
+  margin-bottom: 15px;
 }
 
-.app__tosos__byDay {
-  flex: 0.48;
-  height: 400px;
-  overflow: auto;
-}
-
-.app__todos__list > p {
-  font-size: smaller;
-}
-
-.app__tosos__byDay {
-  height: 400px;
-  overflow: auto;
-}
-
-.app__todos__list > p {
-  font-size: larger;
+.app__todos__list > h2 {
+  color: #FA6526;
   text-align: center;
   margin-bottom: 10px;
 }
 
-.app__tosos__byDay > p {
-  font-size: larger;
-  text-align: center;
-  margin-bottom: 10px;
-}

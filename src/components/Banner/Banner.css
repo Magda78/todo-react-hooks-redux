@@ -1,40 +1,49 @@
 .banner {
     width: 100%;
     height: 60%;
+    padding: 15px;
     display: flex;
     border-radius: 20px;
     margin-bottom: 20px;
-    /*background-color: #4e7e9d;*/
-    background: rgba( 178, 222, 255, 0.10 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 1px );
--webkit-backdrop-filter: blur( 5.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background-image: url('../../components/assets/pexels-jess-vide-4318913.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 .banner__left {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: rgba( 178, 222, 255, 0.10 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     flex: 0.5;
-}
-
-.banner__left > img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
 
 .banner__right {
     flex: 0.5;
     display: flex;
     justify-content: center;
+    padding: 10px;
     align-items: center;
     margin-left: 10px;
     text-align: center;
+    background: rgba( 178, 222, 255, 0.10 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .banner__right > h2 {
-    font-size: 64px;
-    color: #FFFFFF;
+    color: floralwhite;
     letter-spacing: 4px;
-    font-family: fantasy;
+    font-weight: lighter;
+    font-family: monospace;
 }

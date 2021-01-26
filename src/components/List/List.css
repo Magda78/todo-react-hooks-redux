@@ -1,11 +1,13 @@
 .list {
-    height: 400px;
-    margin-bottom: 20px;
-    /*background-color: #4e7e9d;*/
+    height: 100%;
     border-radius: 20px;
-    padding: 20px;
-    /*background-image: url('../assets/pexels-anni-roenkae-3110502.jpg');*/
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding: 10px;
+    overflow: scroll;
+    background: rgba( 178, 222, 255, 0.10 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
