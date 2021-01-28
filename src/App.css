@@ -1,7 +1,8 @@
 .app {
-  width: 90%;
-  margin-left: 5%;
-  background-color: aliceblue;
+  width: 70%;
+  margin-left: 15%;
+  /*background-color: aliceblue;*/
+  background-color: black;
   font-family: monospace;
   margin-top: 20px;
   overflow: auto;
@@ -80,7 +81,8 @@
 }
 
 .app__todos__list > h2 {
-  color: #FA6526;
+  color: floralwhite;
+  letter-spacing: 2px;
   text-align: center;
   margin-bottom: 10px;
 }

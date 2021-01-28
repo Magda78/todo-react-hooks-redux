@@ -29,6 +29,7 @@
     flex: 0.5;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     padding: 10px;
     align-items: center;
     margin-left: 10px;
@@ -44,6 +45,7 @@
 .banner__right > h2 {
     color: floralwhite;
     letter-spacing: 4px;
+    margin-bottom: 15px;
     font-weight: lighter;
     font-family: monospace;
 }

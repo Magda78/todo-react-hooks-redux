@@ -2,17 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './Motto.css';
 
 function Motto() {
-    const [quote, setquote] = useState('')
+    const [quote, setquote] = useState([])
+    const [title, setTitle] = useState('')
+    const [author, setAuthor] = useState('')
     useEffect(() => {
         const fetchMotto = async () => 
         await fetch ('https://type.fit/api/quotes')
         .then(res => res.json())
         .then(data => {
-            setquote(data[Math.floor(Math.random() * data.length)].text)
-            console.log(data)
+            const randomObject = (data[Math.floor(Math.random() * data.length)])
+            setquote(Object.values(randomObject));
+            //setquote(data[Math.floor(Math.random() * data.length)].text)
         })
+       
         fetchMotto();
     },[])
+    console.log('quote', quote)
     return quote
 }
 
