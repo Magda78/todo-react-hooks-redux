@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import './Item.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
@@ -9,8 +9,9 @@ import { removeItem, editItem } from '../../features/dateSlice';
 import { useSpring, animated } from 'react-spring';
 import { ListItemText } from '@material-ui/core';
 
-function Item({ id, title, item }) {
-	const dispatch = useDispatch();
+//function Item ({ id, title, item }) {
+	const Item = forwardRef(({id, title, item}, ref) => {	
+const dispatch = useDispatch();
 	const [ done, setDone ] = useState(false);
 	const [ edit, setEdit ] = useState(false);
 	const [ input, setInput ] = useState('');
@@ -42,7 +43,7 @@ function Item({ id, title, item }) {
 	};
 
 	return (
-		<animated.div className="item" style={itemAdd}>
+		<div className="item" style={itemAdd} ref={ref}>
 			<div className={done === false ? 'item__title' : 'item__titleDone'}>
 				{edit ? (
 					<input
@@ -75,8 +76,9 @@ function Item({ id, title, item }) {
 					<DeleteIcon onClick={() => removeHandler(id)} />
 				</button>
 			</div>
-		</animated.div>
+		</div>
 	);
 }
+	)
 
 export default Item;
