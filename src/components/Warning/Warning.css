@@ -1,0 +1,10 @@
+.warning {
+    width: 100%;
+    color: red;
+}
+
+.warning__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -1,46 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Banner from './components/Banner/Banner';
 import './App.css';
 import List from './components/List/List';
 import { useDispatch } from 'react-redux';
 import { addItem } from './features/dateSlice';
+import Warning from './components/Warning/Warning';
 //import FilteredList from './components/FilteredList/FilteredList';
 
 function App() {
 	const [ input, setInput ] = useState('');
+	const [ error, setError ] = useState(false);
 	const dispatch = useDispatch();
+	const userInput = useRef('');
 
 	const handleInput = (e) => {
-		setInput(e.target.value);
+		setInput(userInput.current.value);
 		e.preventDefault();
 	};
 
 	const handleSubmit = (e) => {
-		dispatch(addItem(input));
-		console.log('input from input:', input);
+		if (input.length === 0) {
+			setError(true);
+			setTimeout(() => {
+				setError(false);
+			}, 2000);
+		} else {
+			dispatch(addItem(input));
+			console.log('input from input:', input);
+		}
 		setInput('');
 		e.preventDefault();
 	};
 
-	const handleAlert = () => {
-		alert('Nothing to add');
-	};
-
 	return (
 		<div className="app">
+			{error && <Warning />}
 			<div className="app__content">
 				<Banner />
 				<div className="app__calendar">
 					<div className="app__calendar__form">
 						<form className="app__calendar__formTag">
-							<input type="text" onChange={handleInput} value={input} placeholder="Add todo....." />
-							{input.length === 0 ? (
-								<button onClick={handleAlert}>ADD</button>
-							) : (
-								<button type="submit" onClick={handleSubmit}>
-									ADD
-								</button>
-							)}
+							<input
+								type="text"
+								onChange={handleInput}
+								value={input}
+								placeholder="Add todo....."
+								ref={userInput}
+							/>
+							<button type="submit" onClick={handleSubmit}>
+								ADD
+							</button>
 						</form>
 					</div>
 				</div>

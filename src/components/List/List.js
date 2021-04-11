@@ -9,7 +9,7 @@ function List() {
 	const list = useSelector(selectList);
 	return (
 		<div className="list">
-			<FlipMove>{list.map((item) => <Item title={item.title} id={item.id} item={item} />)}</FlipMove>
+			<FlipMove>{list.map((item) => <Item key={item.id} title={item.title} id={item.id} item={item} />)}</FlipMove>
 		</div>
 	);
 }
