@@ -7,7 +7,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import { useDispatch } from 'react-redux';
 import { removeItem, editItem } from '../../features/dateSlice';
 import { useSpring, animated } from 'react-spring';
-import { ListItemText } from '@material-ui/core';
+import CheckIcon from '@material-ui/icons/Check';
 
 //function Item ({ id, title, item }) {
 	const Item = forwardRef(({id, title, item}, ref) => {	
@@ -65,7 +65,7 @@ const dispatch = useDispatch();
 					)}
 				</button>
 				{done === false ? (
-					<button onClick={() => editHandlerOpen(input)}>{edit ? 'update' : <EditIcon />}</button>
+					<button onClick={() => editHandlerOpen(input)}>{edit ? <CheckIcon /> : <EditIcon />}</button>
 				) : (
 					<button disabled="true">
 						<EditIcon />

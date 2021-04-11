@@ -12,7 +12,8 @@ function Motto() {
         .then(data => {
             const randomObject = (data[Math.floor(Math.random() * data.length)])
             setquote(Object.values(randomObject));
-            //setquote(data[Math.floor(Math.random() * data.length)].text)
+            setTitle(randomObject[0]);
+            setAuthor(randomObject[1])
         })
        
         fetchMotto();

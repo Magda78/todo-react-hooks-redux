@@ -64,3 +64,12 @@
 .item__icons > button:hover {
     background-color: #FA6526;
 }
+
+@media only screen and (max-width: 1130px) {
+    .item__icons {
+        width: 40%;
+    }
+    .item__icons > button{
+        padding: 2px;
+    }
+}

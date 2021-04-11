@@ -5,8 +5,6 @@ import Motto from '../Motto/Motto';
 
 function Banner() {
     const quote = Motto();
-    //const title = Motto();
-    //const author = Motto()
 	return (
 		<div className="banner">
 			<div className="banner__left">
