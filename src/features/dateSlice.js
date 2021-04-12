@@ -3,13 +3,16 @@ import { v4 as uuid } from 'uuid';
 
 const initialList = localStorage.getItem('list') ? JSON.parse(localStorage.getItem('list')) : [];
 
+const initialFilteredList = initialList.filter((item) => {
+	return new Date(item.date).toLocaleDateString('en-GB') === new Date().toLocaleDateString('en-GB');
+});
+
 export const dateSlice = createSlice({
 	name: 'date',
 	initialState: {
 		date: new Date(),
-		list: [],
 		list: initialList,
-		filtered: [],
+		filtered: initialFilteredList,
 		afterRemove: [],
 		editoo: []
 	},
@@ -20,24 +23,32 @@ export const dateSlice = createSlice({
 		addItem: (state, action) => {
 			const newItem = { id: uuid(), date: state.date, title: action.payload.toUpperCase() };
 			state.list.push(newItem);
+			state.filtered.push(newItem);
 			localStorage.setItem('list', JSON.stringify(state.list));
 		},
 		filteredList: (state, action) => {
-			const filtered = state.list.filter((item) => item.date.toString() === action.payload.toString());
-			console.log('filtered from reducer:', state.filtered);
-			console.log('date list from reducer:', state.dateList);
+			state.filtered = state.list.filter((item) => {
+				return (
+					new Date(item.date).toLocaleDateString('en-GB') ===
+					new Date(action.payload).toLocaleDateString('en-GB')
+				);
+			});
 		},
 		removeItem: (state, action) => {
 			state.list = state.list.filter((item) => item.id !== action.payload);
+			state.filtered = state.filtered.filter((item) => item.id !== action.payload);
 			localStorage.setItem('list', JSON.stringify(state.list));
 		},
 		editItem: (state, action) => {
-      console.log('edited from redux', action.payload)
-			const find = state.list.find((item) => (
-       item.id == action.payload.id ? item.title = action.payload.title: null,
-       localStorage.setItem('list', JSON.stringify(state.list))
-      ));
-			
+			const find = state.list.find(
+				(item) => (
+					item.id === action.payload.id ? (item.title = action.payload.title) : null,
+					localStorage.setItem('list', JSON.stringify(state.list))
+				)
+			);
+			const findFiltered = state.filtered.find(
+				(item) => (item.id === action.payload.id ? (item.title = action.payload.title) : null)
+			);
 		}
 	}
 });

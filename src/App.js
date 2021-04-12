@@ -5,7 +5,6 @@ import List from './components/List/List';
 import { useDispatch } from 'react-redux';
 import { addItem } from './features/dateSlice';
 import Warning from './components/Warning/Warning';
-//import FilteredList from './components/FilteredList/FilteredList';
 
 function App() {
 	const [ input, setInput ] = useState('');
@@ -34,7 +33,7 @@ function App() {
 
 	return (
 		<div className="app">
-			{error && <Warning />}
+			
 			<div className="app__content">
 				<Banner />
 				<div className="app__calendar">
@@ -51,6 +50,7 @@ function App() {
 								ADD
 							</button>
 						</form>
+						{error && <Warning />}
 					</div>
 				</div>
 				<div className="app__todos">

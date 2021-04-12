@@ -4,13 +4,10 @@
     margin-bottom: 10px;
     justify-content: space-between;
     align-items: center;
-    /*box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    border-radius: 10px;*/
+    border-radius: 10px;
     border-bottom: 1px solid #00ACB1;
     margin-bottom: 20px;
 }
-
-
 
 .item__input {
     background-color: rgba( 178, 222, 255, 0.10 );
