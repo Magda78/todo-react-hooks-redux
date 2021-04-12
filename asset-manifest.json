@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/todo-react-hooks-redux/static/css/main.1c4bf7c8.chunk.css",
-    "main.js": "/todo-react-hooks-redux/static/js/main.1b3b4e45.chunk.js",
-    "main.js.map": "/todo-react-hooks-redux/static/js/main.1b3b4e45.chunk.js.map",
+    "main.css": "/todo-react-hooks-redux/static/css/main.375a9de6.chunk.css",
+    "main.js": "/todo-react-hooks-redux/static/js/main.9fb3b7dc.chunk.js",
+    "main.js.map": "/todo-react-hooks-redux/static/js/main.9fb3b7dc.chunk.js.map",
     "runtime-main.js": "/todo-react-hooks-redux/static/js/runtime-main.30f1a95a.js",
     "runtime-main.js.map": "/todo-react-hooks-redux/static/js/runtime-main.30f1a95a.js.map",
-    "static/css/2.e4068eef.chunk.css": "/todo-react-hooks-redux/static/css/2.e4068eef.chunk.css",
-    "static/js/2.03bd9671.chunk.js": "/todo-react-hooks-redux/static/js/2.03bd9671.chunk.js",
-    "static/js/2.03bd9671.chunk.js.map": "/todo-react-hooks-redux/static/js/2.03bd9671.chunk.js.map",
+    "static/css/2.8cebfa1f.chunk.css": "/todo-react-hooks-redux/static/css/2.8cebfa1f.chunk.css",
+    "static/js/2.ddc622af.chunk.js": "/todo-react-hooks-redux/static/js/2.ddc622af.chunk.js",
+    "static/js/2.ddc622af.chunk.js.map": "/todo-react-hooks-redux/static/js/2.ddc622af.chunk.js.map",
     "index.html": "/todo-react-hooks-redux/index.html",
-    "static/css/2.e4068eef.chunk.css.map": "/todo-react-hooks-redux/static/css/2.e4068eef.chunk.css.map",
-    "static/css/main.1c4bf7c8.chunk.css.map": "/todo-react-hooks-redux/static/css/main.1c4bf7c8.chunk.css.map",
-    "static/js/2.03bd9671.chunk.js.LICENSE.txt": "/todo-react-hooks-redux/static/js/2.03bd9671.chunk.js.LICENSE.txt",
+    "static/css/2.8cebfa1f.chunk.css.map": "/todo-react-hooks-redux/static/css/2.8cebfa1f.chunk.css.map",
+    "static/css/main.375a9de6.chunk.css.map": "/todo-react-hooks-redux/static/css/main.375a9de6.chunk.css.map",
+    "static/js/2.ddc622af.chunk.js.LICENSE.txt": "/todo-react-hooks-redux/static/js/2.ddc622af.chunk.js.LICENSE.txt",
     "static/media/Banner.css": "/todo-react-hooks-redux/static/media/pexels-jess-vide-4318913.e34c337d.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.30f1a95a.js",
-    "static/css/2.e4068eef.chunk.css",
-    "static/js/2.03bd9671.chunk.js",
-    "static/css/main.1c4bf7c8.chunk.css",
-    "static/js/main.1b3b4e45.chunk.js"
+    "static/css/2.8cebfa1f.chunk.css",
+    "static/js/2.ddc622af.chunk.js",
+    "static/css/main.375a9de6.chunk.css",
+    "static/js/main.9fb3b7dc.chunk.js"
   ]
 }
